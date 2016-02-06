@@ -11,15 +11,13 @@ Book::Book(string name, double price, string author):Item(name, price) {
 	this->author=author;
 }
 
-Book::~Book() {
-	// TODO Auto-generated destructor stub
-}
+Book::~Book() {}
 
-double Book::pvp(){
+double Book::pvp() const{
 	return this->getPrice()+(this->getPrice()*0.16);
 }
 
-string Book::getInfo(){
+string Book::getInfo() const{
 	stringstream ss;
 	ss << this->getName() << " " << roundf(pvp()*100)/100;
 	return ss.str();

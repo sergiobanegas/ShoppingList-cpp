@@ -13,9 +13,9 @@
 class SupermarketProduct : public Item{
 public:
 	SupermarketProduct(string name, double price, int amount);
-	double pvp();
-	string getInfo();
-	virtual ~SupermarketProduct();
+	~SupermarketProduct();
+	double pvp() const;
+	string getInfo() const;
 private:
 	int amount;
 };

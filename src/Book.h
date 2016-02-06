@@ -13,9 +13,9 @@
 class Book : public Item{
 public:
 	Book(string name, double price, string author);
-	double pvp();
-	string getInfo();
-	virtual ~Book();
+	~Book();
+	double pvp() const;
+	string getInfo()const;
 private:
 	string author;
 };

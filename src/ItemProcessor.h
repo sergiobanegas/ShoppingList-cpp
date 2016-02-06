@@ -24,10 +24,10 @@ using namespace std;
 class ItemProcessor {
 public:
 	ItemProcessor();
-	const bool load(const char* file);
-	const double pvp();
-	string generateTicket();
-	virtual ~ItemProcessor();
+	~ItemProcessor();
+	bool load(const char* file) const;
+	double pvp() const;
+	string generateTicket() const;
 private:
 	Item** items;
 	int numberOfItems;

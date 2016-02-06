@@ -13,9 +13,9 @@
 class Toy : public Item{
 public:
 	Toy(string name, double price, string brand, int amount);
-	double pvp();
-	string getInfo();
-	virtual ~Toy();
+	~Toy();
+	double pvp() const;
+	string getInfo() const;
 private:
 	string brand;
 	int amount;

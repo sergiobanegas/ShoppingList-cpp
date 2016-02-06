@@ -12,18 +12,12 @@ Item::Item(string name, double price) {
 	this->price = price;
 }
 
-Item::~Item() {
-	// TODO Auto-generated destructor stub
-}
+Item::~Item() {}
 
-double Item::pvp() {
-	return 0;
-}
-
-string Item::getName() {
+string Item::getName() const {
 	return this->name;
 }
 
-double Item::getPrice() {
+double Item::getPrice() const {
 	return this->price;
 }

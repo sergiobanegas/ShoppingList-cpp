@@ -16,10 +16,10 @@ ItemProcessor::~ItemProcessor() {
 	for (int i=0;i<this->numberOfItems;i++){
 		delete this->items[i];
 	}
-	delete this->items;
+	delete [] this->items;
 }
 
-const bool ItemProcessor::load(const char* file){
+bool ItemProcessor::load(const char* file) const{
 	 ifstream myFile;
 	 myFile.open(file, ifstream::in);
 	 string line;
@@ -56,7 +56,7 @@ const bool ItemProcessor::load(const char* file){
 	 }
 }
 
-const double ItemProcessor::pvp(){
+double ItemProcessor::pvp() const{
 	double totalPrice=0.0;
 	for (int i=0;i<this->numberOfItems;i++){
 		totalPrice+=roundf(this->items[i]->pvp()*100)/100;
@@ -64,7 +64,7 @@ const double ItemProcessor::pvp(){
 	return roundf(totalPrice*100)/100;
 }
 
-string ItemProcessor::generateTicket(){
+string ItemProcessor::generateTicket() const{
 	stringstream ticket;
 	ticket << "\n";
 	for (int i=0;i<this->numberOfItems;i++){

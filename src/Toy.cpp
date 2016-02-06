@@ -12,15 +12,13 @@ Toy::Toy(string name, double price, string brand, int amount):Item(name, price) 
 	this->amount=amount;
 }
 
-Toy::~Toy() {
-	// TODO Auto-generated destructor stub
-}
+Toy::~Toy() {}
 
-double Toy::pvp(){
+double Toy::pvp() const{
 	return this->amount*(this->getPrice()+(this->getPrice()*0.21));
 }
 
-string Toy::getInfo(){
+string Toy::getInfo() const{
 	stringstream ss;
 	ss << this->amount <<" "<< this->getName() << " " << roundf((this->pvp()/this->amount)*100)/100;
 	return ss.str();

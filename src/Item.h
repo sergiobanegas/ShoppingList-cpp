@@ -18,11 +18,11 @@ class Item {
 public:
 	Item(string name, double price);
 	virtual ~Item();
-	virtual double pvp()=0;
-	virtual string getInfo()=0;
+	virtual double pvp() const = 0;
+	virtual string getInfo() const = 0;
 protected:
-	string getName();
-	double getPrice();
+	string getName() const;
+	double getPrice() const;
 private:
 	string name;
 	double price;
